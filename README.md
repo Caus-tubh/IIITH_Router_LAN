@@ -109,7 +109,7 @@
      opkg print-architecture
      ```
     - Open the [OpenWRT's download page](https://archive.openwrt.org/releases/)  to download a package to complete our process
-   - Select the release number of your downloaded image of OpenWRT (Refer to [Pre-requsities](https://github.com/VIS-WA/IIITH_Router_LAN/edit/main/README.md#pre-requisites) last point)
+   - Select the release number of your downloaded image of OpenWRT (Refer to [Pre-requsities](#pre-requisites) last point)
    - Select ```packages``` folder option
    - Select the architecture name that was earlier found    corresponding to your router's architecture found.
    - Select the ```base``` folder option
