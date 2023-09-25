@@ -113,14 +113,16 @@
    - Select ```packages``` folder option
    - Select the architecture name that was earlier found    corresponding to your router's architecture found.
    - Select the ```base``` folder option
-   - Search for packages with name just ```wpad```. There can be many with names ```wpad-mini```, ```wpad-wollssl``` etc, but just look for ```wpad_$version_$arch.ipk```. If there are multiple files, that indicates different versions, download the latest one.
+   - Search for packages with name just ```wpad```. There can be many with names ```wpad-mini```, ```wpad-wolfssl``` etc, but just look for ```wpad_$version_$arch.ipk```. If there are multiple files, that indicates different versions, download the latest one.
 
 10. **Copy the package to the router**
     - Open another terminal
-    - Copy the downloaded file to the router with the following command
-    ```scp ~/Downloads/wpad_$version_$arch.ipk root@192.168.1.1:/tmp/```
-   Feel free to change the first argument(```~/Downloads/wpad_$version_$arch.ipk```) to the actual location of the downloaded package file.
-   - To verify if the file has been transferred, in the first terminal opened earlier, type ```ls /tmp/``` and check if the file exists.
+    - Copy the downloaded file to the router with the following command:
+    ```
+    scp ~/Downloads/wpad_$version_$arch.ipk root@192.168.1.1:/tmp/
+    ```
+    Feel free to change the first argument(```~/Downloads/wpad_$version_$arch.ipk```) to the actual location of the downloaded package file.
+    - To verify if the file has been transferred, in the first terminal opened earlier, type ```ls /tmp/``` and check if the file exists.
 
 10. **Remove and Install Packages:**
     - Remove the `wpad-mini` package:
@@ -164,7 +166,7 @@ Incase if you are not able to access internet after the above steps, it can be d
     ``` 
     , where eth1 should be replaced with the suitable interface found in Step 6 earlier.
     
-    - The above command tries to authenticate with the creds provided. Check for the server response on the terminal screen.For a successful authentication, you will receive a positive response message. If the interface is wrong, you will not receive any acknowledgements from the server. If the interface is right and the IIIT credentials are wrongly provided, you will receive an acknowledgment that reads IIIT's name. However, your connection will not succeed.
+    - The above command tries to authenticate with the creds provided. Check for the server response on the terminal screen. For a successful authentication, you will receive a positive response message. If the interface is wrong, you will not receive any acknowledgements from the server. If the interface is right and the IIIT credentials are wrongly provided, you will receive an acknowledgment that reads IIIT's name. However, your connection will not succeed.
 
 ## Credits:
 
