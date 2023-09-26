@@ -70,7 +70,7 @@
          phase2="auth=MSCHAPV2"
      }
      ```
-     Note: Replace "your_username_here" and "your_password_here" with your IIIT email ID and 802.1x password
+     Note: Replace "your_username_here" and "your_password_here" with your IIIT email ID and 802.1x password within the quotes.
 
 7. **Create Startup Script:**
    - Type ```ifconfig``` to list down all the network interfaces
