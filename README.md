@@ -133,7 +133,7 @@
       ```
       opkg install /tmp/wpad_$version_$arch.ipk
       ```
-    - Incase if you encounter an error that there is a conflicting package, remove that package and try installing again from previous step
+    - Incase if you encounter an error that there is a conflicting package, remove that package and try installing again from the previous step
 
 11. **Edit DHCP Configuration:**
     - Edit the file `/etc/config/dhcp` (terminal command would look like ```vi /etc/config/dhcp```).
@@ -154,20 +154,35 @@
 
 ## Debugging:
 
-Incase if you are not able to access internet after the above steps, it can be due to multiple reasons
+Incase if you are not able to access the internet after the above steps, it can be due to multiple reasons.
 
 1. Memory on your router is not sufficient to compile the packages. In that case, follow the steps in [Section 2](https://self-help.iiit.ac.in/wiki/index.php/Configure_802.1X_Client_Auth_Mechanism_for_Routers) located at the bottom of the Self-Help page.
 2. Wrong user credentials or interface is provided. To check this, do the following steps:
 
-    - SSH into the router as mentioned in the Step 5 earlier.
+    - SSH into the router as mentioned in Step 5 earlier.
     - In the terminal, type the following command: 
     ```
     wpa_supplicant -D wired -i eth1 -c /etc/config/wpa.conf
     ``` 
     , where eth1 should be replaced with the suitable interface found in Step 6 earlier.
     
-    - The above command tries to authenticate with the creds provided. Check for the server response on the terminal screen. For a successful authentication, you will receive a positive response message. If the interface is wrong, you will not receive any acknowledgements from the server. If the interface is right and the IIIT credentials are wrongly provided, you will receive an acknowledgment that reads IIIT's name. However, your connection will not succeed.
+    - The above command tries to authenticate with the creds provided. Check for the server response on the terminal screen. For a successful authentication, you will receive a positive response message. If the interface is wrong, you will not receive any acknowledgements from the server. If the interface is right and the IIIT credentials are wrongly provided, you will receive an acknowledgement that reads IIIT's name. However, your connection will not succeed.
+    - A successful acknowledgement message would read like this:
+      ```
+      Successfully initialized wpa_supplicant
+        wan: Associated with 01:XX:c2:00:00:XX
+        wan: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+        wan: CTRL-EVENT-EAP-STARTED EAP authentication started
+        wan: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+        wan: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+        wan: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='C=IN, ST=Telangana, O=IIIT Hyderabad, CN=IIIT-H Radius Server Certificate/emailAddress=sysadmins@****.iiit.ac.in' hash=****
+        wan: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='C=IN, ST=Telangana, L=Gachibowli, O=IIIT Hyderabad, CN=IIIT-H Radius Server CA/emailAddress=sysadmins@****.iiit.ac.in' hash=****
+        EAP-MSCHAPV2: Authentication succeeded
+        EAP-TLV: TLV Result - Success - EAP-TLV/Phase2 Completed
+        wan: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+        wan: CTRL-EVENT-CONNECTED - Connection to 01:XX:c2:00:00:XX completed [id=0 id_str=]
+    ```
 
 ## Credits:
 
-This information is taken from mulitple online resources including [Self-Help Portal](self-help.iiit.ac.in). I would also like to thank my buddy [Harsha Vardhan](https://www.linkedin.com/in/harshavardhannarla/) for helping me out.
+This information is from multiple online resources, including [Self-Help Portal](self-help.iiit.ac.in). I would also like to thank my buddy [Harsha Vardhan](https://www.linkedin.com/in/harshavardhannarla/) for helping me out.
