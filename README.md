@@ -119,7 +119,7 @@
     - Open another terminal
     - Copy the downloaded file to the router with the following command:
     ```
-    scp ~/Downloads/wpad_$version_$arch.ipk root@192.168.1.1:/tmp/
+    scp -O ~/Downloads/wpad_$version_$arch.ipk root@192.168.1.1:/tmp/
     ```
     Feel free to change the first argument(```~/Downloads/wpad_$version_$arch.ipk```) to the actual location of the downloaded package file.
     - To verify if the file has been transferred, in the first terminal opened earlier, type ```ls /tmp/``` and check if the file exists.
@@ -182,7 +182,19 @@ Incase if you are not able to access the internet after the above steps, it can 
         wan: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
         wan: CTRL-EVENT-CONNECTED - Connection to 01:XX:c2:00:00:XX completed [id=0 id_str=]
     ```
+3. If you get an error message similar to 
+      ```Successfully initialized wpa_supplicant
+      Line 6: unknown network field 'eap'.
+      Line 7: unknown network field 'identity'.
+      Line 8: unknown network field 'password'.
+      Line 9: unknown network field 'phase1'.
+      Line 10: unknown network field 'phase2'.
+      Line 11: failed to parse network block.
+      Failed to read or parse configuration '/etc/config/wpa.conf'.
+      ```
+      That means your WPAD (Wireless Protected Access Daemon) cannot handle 802.1X authentication. For this you will have to install ```wpad-openssl``` or ```wpad-wolfssl```, although [even wpad-wolfssl may not work](https://unix.stackexchange.com/questions/775969/openwrt-wpa-supplicant-does-not-support-the-network-block).
 
+      You can try installing the library directly from the ipk file but that did not work for me so i had to build the image using the image builder and then flash the image into the router.
 ## Credits:
 
 This information is from multiple online resources, including [Self-Help Portal](self-help.iiit.ac.in). I would also like to thank my buddy [Harsha Vardhan](https://www.linkedin.com/in/harshavardhannarla/) for helping me out.
