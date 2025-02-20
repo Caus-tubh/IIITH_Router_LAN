@@ -175,13 +175,13 @@ Incase if you are not able to access the internet after the above steps, it can 
         wan: CTRL-EVENT-EAP-STARTED EAP authentication started
         wan: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
         wan: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
-        wan: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='C=IN, ST=Telangana, O=IIIT Hyderabad, CN=IIIT-H Radius Server Certificate/emailAddress=sysadmins@****.iiit.ac.in' hash=****
-        wan: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='C=IN, ST=Telangana, L=Gachibowli, O=IIIT Hyderabad, CN=IIIT-H Radius Server CA/emailAddress=sysadmins@****.iiit.ac.in' hash=****
+        wan: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='C=IN, ST=Telangana, O=IIIT Hyderabad, CN=IIIT-H Radius Server Certificate/emailAddress=sys******@****.****.**.in' hash=****
+        wan: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='C=IN, ST=Telangana, L=Gachibowli, O=IIIT Hyderabad, CN=IIIT-H Radius Server CA/emailAddress=sys******@****.****.**.in' hash=****
         EAP-MSCHAPV2: Authentication succeeded
         EAP-TLV: TLV Result - Success - EAP-TLV/Phase2 Completed
         wan: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
         wan: CTRL-EVENT-CONNECTED - Connection to 01:XX:c2:00:00:XX completed [id=0 id_str=]
-    ```
+        ```
 3. If you get an error message similar to 
       ```Successfully initialized wpa_supplicant
       Line 6: unknown network field 'eap'.
